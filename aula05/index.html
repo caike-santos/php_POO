@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../_css/estilo.css"/>
+  <meta charset="UTF-8"/>
+  <title>modelo</title>
+</head>
+<body>
+<div>
+    <form action="criar.php" method="get">
+        
+            <H1>Criar conta</H1>
+            <label for="idono">Nome: </label>
+            <input type="text" name="dono" id="idono">
+            <br>
+            <label for="inum">Numero da conta:</label>
+            <input type="number" name="num" id="inum">
+            <fieldset>
+                <legend>Tipo da conta</legend>
+                <input type="radio" name="tipo" id="tipoc" value="corrente">
+                <label for="tipoc">Corrente</label>
+                <input type="radio" name="tipo" id="tipop" value="poupanca">
+                <label for="tipop">Poupança</label>
+            </fieldset>
+            <input type="submit" value="Criar">
+    </form>
+</div>
+</body>
+</html>
