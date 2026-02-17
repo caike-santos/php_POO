@@ -19,17 +19,9 @@
             $this->vitorias = $v;
             $this->derrotas = $d;
             $this->empates = $e;
-            $this->peso = $p;
+            $this->setPeso($p);
             
-            if($p<=50){
-                $this->setCategoria("Invalida");
-            }elseif($p<=70){
-                $this->setCategoria("Leve");
-            }elseif($p<=80){
-                $this->setCategoria("Media");
-            }else{
-                $this->setCategoria("Pesada");
-            }
+            
         }
 
         public function setNome($nome){
@@ -57,13 +49,23 @@
         return $this->altura;}
 
         public function setPeso($peso){
-        $this->peso = $peso;}
+        $this->peso = $peso;
+        $this->setCategoria();}
 
         public function getPeso(){
         return $this->peso;}
 
-        public function setCategoria($categoria){
-        $this->categoria = $categoria;}
+        private function setCategoria(){
+        if($this->peso<=50){
+                $this->categoria = "Invalida";
+            }elseif($this->peso<=70){
+                $this->categoria = "Peso pena";
+            }elseif($this->peso<=80){
+                $this->categoria = "Peso leve";
+            }else{
+                $this->categoria = "Peso pesado";
+            }}
+
 
         public function getCategoria(){
         return $this->categoria;}
@@ -93,15 +95,15 @@
         }
 
         public function status(){
-            echo "Nome: {$this->getNome()}";
-            echo "Nascionalidade {$this->getNascionalidade()}";
-            echo "Idade: {$this->getIdade()}";
-            echo "Altura: {$this->getAltura()}";
-            echo "Peso: {$this->getPeso()}";
-            echo "Categoria: {$this->getCategoria()}";
-            echo "Vitorias: {$this->getVitorias()}";
-            echo "Derrotas: {$this->getDerrotas()}";
-            echo "Empates: {$this->getEmpates()}";
+            echo "Nome: {$this->getNome()}<br>";
+            echo "Nascionalidade {$this->getNascionalidade()}<br>";
+            echo "Idade: {$this->getIdade()}<br>";
+            echo "Altura: {$this->getAltura()}<br>";
+            echo "Peso: {$this->getPeso()}<br>";
+            echo "Categoria: {$this->getCategoria()}<br>";
+            echo "Vitorias: {$this->getVitorias()}<br>";
+            echo "Derrotas: {$this->getDerrotas()}<br>";
+            echo "Empates: {$this->getEmpates()}<br><br>";
         }
 
         public function ganharLuta(){
