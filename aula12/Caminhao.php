@@ -27,7 +27,7 @@
             echo "Carregando o Caminhao da marca {$this->getMarca()} com {$this->getMaterial()}}<br>";
         }
 
-        public function tempodeCaregamento(int $p){
+        public function tempodeCaregamentoPessoas(int $p){
             if($p <= 3){
                 echo "Carregando lentamente<br>";
             }else{
@@ -35,7 +35,7 @@
             }
         }
 
-        public function tempodeCarregamento(float $peso){
+        public function tempodeCarregamentoPeso(float $peso){
             if($peso <= 500){
                 echo "Carregando rapidamente<br>";
             }else{
